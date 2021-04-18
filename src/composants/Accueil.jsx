@@ -4,7 +4,7 @@ import { useEffect } from 'react';
 
 export default function Accueil() {
   useEffect(() => crudUtilisateurs.initUI("#firebaseui-widget"), []);
-
+  
   return (
     <div className="Accueil">
       <h3 className="logo">Memo</h3>

@@ -15,13 +15,11 @@ export default function Taches({etatTaches, utilisateur}) {
    */
 
   /* Ex3 - Point E)iii) */
-  /*
-  useEffect(() => 
+    useEffect(() => 
     crudTaches.lireTout(uid).then(
       taches => setTaches(taches)
     )
   , [setTaches, nouvelleTache, uid]);
-  */
 
   /**
    * Gérer le formulaire d'ajout de nouvelle tâche en appelant la méthode 

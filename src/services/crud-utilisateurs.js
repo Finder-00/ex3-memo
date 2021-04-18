@@ -1,8 +1,7 @@
 import firebase from 'firebase/app';
-import { instanceFirebaseAuth } from './firebase-initialisation'
-import { instanceFirebaseUI } from './firebase-initialisation';
+import { instanceFirebaseAuth, instanceFirebaseUI, instanceFirestore} from './firebase-initialisation'
 import 'firebaseui/dist/firebaseui.css';
-/* Ex3 - Point D)i) */
+import { collUtil } from '../services/config';
 
 /**
  * Initialiser le widget FirebaseUI et l'injecte dans la page Web
@@ -33,7 +32,9 @@ export function observerConnexion(mutateurEtatUtil) {
       // Si un utilisateur est connecté ...
       if(util) {
         // ... on créé son profil dans la collection Firestore au besoin
-        creerProfil(util.uid, util.displayName, util.email);
+        instanceFirestore.collection(collUtil).doc(util.uid).set(
+          creerProfil(util.uid, util.displayName, util.email)
+        )
       }
     }
   );
@@ -46,8 +47,8 @@ export function observerConnexion(mutateurEtatUtil) {
  * @param {string} courriel Adresse courriel de l'utilisateur
  */
 export function creerProfil(id, nom, courriel) {
-  /* Ex3 - Point D)ii) */
-  
+  {util.id, util.nom, util.courriel}
+  {merge: true}
 }
 
 /**
