@@ -14,9 +14,7 @@ export async function creer(uid, tache) {
   // On ajoute la propriété 'date' à l'objet représentant la tâche en prenant la date du serveur Firestore.
   tache.date = firebase.firestore.FieldValue.serverTimestamp();
   /* Ex3 - Point E)ii) */
-  instanceFirestore.collection(collUtil).doc(collTaches).set(
-    lireTout(uid)
-  )
+  return instanceFirestore.collection(collUtil).doc(uid).collection(collTaches).add(tache)
 }
 
 /**

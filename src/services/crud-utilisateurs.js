@@ -30,10 +30,11 @@ export function observerConnexion(mutateurEtatUtil) {
       // On fait la mutation de l'état utilisateur
       mutateurEtatUtil(util);
       // Si un utilisateur est connecté ...
-      if(util) {
+      if(util !== null) {
         // ... on créé son profil dans la collection Firestore au besoin
         instanceFirestore.collection(collUtil).doc(util.uid).set(
-          creerProfil(util.uid, util.displayName, util.email)
+          {nom: util.displayName, courriel: util.email},
+          {merge: true}
         )
       }
     }
@@ -47,13 +48,12 @@ export function observerConnexion(mutateurEtatUtil) {
  * @param {string} courriel Adresse courriel de l'utilisateur
  */
 export function creerProfil(id, nom, courriel) {
-  {util.id, util.nom, util.courriel}
-  {merge: true}
+
 }
 
 /**
  * Déconnecter l'utilisateur de Firebase Auth
  */
-export function deconnexion() {
+export default function deconnexion() {
   instanceFirebaseAuth.signOut();
 }
