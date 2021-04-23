@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/ex3-memo/static/css/main.e7955714.chunk.css",
-    "main.js": "/ex3-memo/static/js/main.dfaed7de.chunk.js",
+    "main.js": "/ex3-memo/static/js/main.1a5f6f8b.chunk.js",
     "runtime-main.js": "/ex3-memo/static/js/runtime-main.243bc34a.js",
     "static/css/2.5110bfca.chunk.css": "/ex3-memo/static/css/2.5110bfca.chunk.css",
     "static/js/2.1754233f.chunk.js": "/ex3-memo/static/js/2.1754233f.chunk.js",
@@ -13,6 +13,6 @@
     "static/css/2.5110bfca.chunk.css",
     "static/js/2.1754233f.chunk.js",
     "static/css/main.e7955714.chunk.css",
-    "static/js/main.dfaed7de.chunk.js"
+    "static/js/main.1a5f6f8b.chunk.js"
   ]
 }
