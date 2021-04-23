@@ -32,10 +32,7 @@ export function observerConnexion(mutateurEtatUtil) {
       // Si un utilisateur est connecté ...
       if(util !== null) {
         // ... on créé son profil dans la collection Firestore au besoin
-        instanceFirestore.collection(collUtil).doc(util.uid).set(
-          {nom: util.displayName, courriel: util.email},
-          {merge: true}
-        )
+        creerProfil(util.uid, util.displayName, util.email)
       }
     }
   );
@@ -48,7 +45,11 @@ export function observerConnexion(mutateurEtatUtil) {
  * @param {string} courriel Adresse courriel de l'utilisateur
  */
 export function creerProfil(id, nom, courriel) {
-
+ // je trouvais plus simple d'ecrire directement dans la fonction observer connexion
+ instanceFirestore.collection(collUtil).doc(id.uid).set(
+  {id: id.uid, nom: id.displayName, courriel: id.email},
+  {merge: true}
+  ) 
 }
 
 /**
