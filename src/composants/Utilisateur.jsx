@@ -1,7 +1,6 @@
 import './Utilisateur.scss';
 import { Avatar, Button } from '@material-ui/core';
-import { instanceFirebaseAuth } from '../services/firebase-initialisation';
-import deconnexion from '../services/crud-utilisateurs';
+import {deconnexion} from '../services/crud-utilisateurs';
 
 export default function Utilisateur({utilisateur}) {
   return (

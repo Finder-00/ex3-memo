@@ -55,6 +55,6 @@ export function creerProfil(id, nom, courriel) {
 /**
  * Déconnecter l'utilisateur de Firebase Auth
  */
-export default function deconnexion() {
+export function deconnexion() {
   instanceFirebaseAuth.signOut();
 }
